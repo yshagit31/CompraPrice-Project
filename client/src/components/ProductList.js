@@ -9,7 +9,7 @@ function ProductList() {
 
     const handleSearch = async () => {
         try {
-            const response = await axios.get(`https://compra-price-project.vercel.app/api/search?q=${query}`);
+            const response = await axios.get(`https://compra-price-api.vercel.app/api/search?q=${query}`);
             const data = response.data;
 
             // Set products directly from the server response
