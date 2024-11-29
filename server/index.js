@@ -5,12 +5,21 @@ const cors = require('cors');
 require('dotenv').config(); 
 
 const app = express();
-app.use(cors({
-    origin: ['http://localhost:3000', 'https://compra-price.vercel.app'], 
-    methods: ['GET', 'POST'],
-    credentials: true, 
-}
-));
+
+// app.use(cors({
+//     origin: ['http://localhost:3000', 'https://compra-price.vercel.app'], 
+//     methods: ['GET', 'POST'],
+//     credentials: true, 
+// }
+// ));
+
+const corsOptions = {
+    origin: 'https://compra-price.vercel.app', // Frontend URL
+    methods: ['GET', 'POST'], // Allowed methods
+    credentials: true // If cookies/auth headers are used
+};
+
+app.use(cors(corsOptions));
 
 const PORT = 5000;
 
