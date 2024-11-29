@@ -18,10 +18,9 @@ const PORT = 5000;
 // Delay function for retry mechanism
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-// Retry mechanism for fetching data
 const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
     try {
-        const response = await axios.get(url, options);
+        const response = await axios.get(url, { headers: options.headers, params: options.params });
         return response.data;
     } catch (error) {
         if (retries > 0) {
@@ -32,20 +31,6 @@ const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
         }
     }
 };
-
-// const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
-//     try {
-//         const response = await axios.get(url, { headers: options.headers, params: options.params });
-//         return response.data;
-//     } catch (error) {
-//         if (retries > 0) {
-//             await delay(backoff);
-//             return fetchWithRetry(url, options, retries - 1, backoff * 2);
-//         } else {
-//             throw error;
-//         }
-//     }
-// };
 
 
 // Conversion rate from USD to INR
