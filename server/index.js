@@ -13,37 +13,15 @@ app.use(cors({
 }
 ));
 
-// const corsOptions = {
-//     origin: 'https://compra-price.vercel.app', // Frontend URL
-//     methods: ['GET', 'POST'], // Allowed methods
-//     credentials: true // If cookies/auth headers are used
-// };
-
-// app.use(cors(corsOptions));
-
 const PORT = 5000;
 
 // Delay function for retry mechanism
 const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 // Retry mechanism for fetching data
-// const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
-//     try {
-//         const response = await axios.get(url, options);
-//         return response.data;
-//     } catch (error) {
-//         if (retries > 0) {
-//             await delay(backoff);
-//             return fetchWithRetry(url, options, retries - 1, backoff * 2);
-//         } else {
-//             throw error;
-//         }
-//     }
-// };
-
 const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
     try {
-        const response = await axios.get(url, { headers: options.headers, params: options.params });
+        const response = await axios.get(url, options);
         return response.data;
     } catch (error) {
         if (retries > 0) {
@@ -54,6 +32,20 @@ const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
         }
     }
 };
+
+// const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
+//     try {
+//         const response = await axios.get(url, { headers: options.headers, params: options.params });
+//         return response.data;
+//     } catch (error) {
+//         if (retries > 0) {
+//             await delay(backoff);
+//             return fetchWithRetry(url, options, retries - 1, backoff * 2);
+//         } else {
+//             throw error;
+//         }
+//     }
+// };
 
 
 // Conversion rate from USD to INR
