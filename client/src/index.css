@@ -54,3 +54,11 @@ button {
   height: auto;
   margin-bottom: 10px;
 }
+
+
+@media (min-width: 1200px) {
+  .footer-content-centered {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+}

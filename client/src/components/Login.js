@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import './Registration.css';
+import './Login.css';
 
-function Registration() {
+function Login() {
     const [form, setForm] = useState({
-        username: '',
         email: '',
         password: ''
     });
@@ -21,21 +20,11 @@ function Registration() {
     };
 
     return (
-        <div className="registration-container">
-            <div className="registration-card">
-                <h1 className="registration-title">Create Your Account</h1>
-                <p className="registration-subtitle">Join CompraPrice to compare prices and save big!</p>
+        <div className="login-container">
+            <div className="login-card">
+                <h1 className="login-title">Sign In</h1>
+                <p className="login-subtitle">Log in to CompraPrice to start comparing prices!</p>
                 <form onSubmit={handleSubmit}>
-                    <div className="input-group">
-                        <input
-                            type="text"
-                            name="username"
-                            placeholder="Username"
-                            value={form.username}
-                            onChange={handleChange}
-                            required
-                        />
-                    </div>
                     <div className="input-group">
                         <input
                             type="email"
@@ -56,14 +45,14 @@ function Registration() {
                             required
                         />
                     </div>
-                    <button type="submit" className="registration-button">Register</button>
+                    <button type="submit" className="login-button">Log In</button>
                 </form>
-                <p className="registration-footer">
-                    Already have an account? <a href="/login" className="login-link">Log in</a>
+                <p className="login-footer">
+                    Don't have an account? <a href="/register" className="register-link">Register</a>
                 </p>
             </div>
         </div>
     );
 }
 
-export default Registration;
+export default Login;
