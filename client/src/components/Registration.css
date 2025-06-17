@@ -1,39 +1,89 @@
 .registration-container {
-    text-align: center;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa;
     padding: 20px;
 }
 
-.registration-container form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+.registration-card {
+    background: white;
+    padding: 40px;
+    border-radius: 1rem;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.registration-title {
+    font-size: 2rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #2563eb, #9333ea);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.registration-subtitle {
+    font-size: 1rem;
+    color: #6c757d;
+    margin-bottom: 30px;
+}
+
+.input-group {
+    margin-bottom: 20px;
 }
 
 .registration-container input {
-    margin: 10px;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: none;
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 1rem;
+    border: 2px solid #e5e7eb;
+    border-radius: 0.5rem;
     outline: none;
-    background: #444;
-    color: white;
-    width: 300px;
+    background: white;
+    color: #212529;
+    transition: border-color 0.3s, box-shadow 0.3s;
 }
 
-.registration-container button {
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
+.registration-container input:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.registration-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
     border: none;
-    /* background: #007aff; */
-    background: #3caa71;
+    border-radius: 0.5rem;
+    background: linear-gradient(to right, #2563eb, #9333ea);
     color: white;
-    transition: background 0.3s;
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.registration-container button:hover {
-    background: #005bb5;
+.registration-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.registration-footer {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: 20px;
+}
+
+.login-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.login-link:hover {
+    color: #9333ea;
 }
