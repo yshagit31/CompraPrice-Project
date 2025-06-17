@@ -12,6 +12,10 @@ import Deals from './pages/Deals';
 import Categories from './pages/Categories';
 import Contact from './pages/Contact';
 import Faq from './pages/Faq';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import CookiePolicy from './pages/CookiePolicy';
+import TermsOfService from './pages/TermsOfService';
+
 function App() {
     return (
         <div className='main'>
@@ -28,6 +32,9 @@ function App() {
                     <Route path='/categories' element={<Categories/>}/>
                     <Route path='/contact' element={<Contact/>}/>
                     <Route path='/faq' element={<Faq/>}/>
+                    <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+                    <Route path="/cookiepolicy" element={<CookiePolicy />} />
+                    <Route path="/termsofservice" element={<TermsOfService />} />
                 </Routes>
             </div>
         </Router>
@@ -37,3 +44,4 @@ function App() {
 }
 
 export default App;
+
