@@ -92,14 +92,14 @@ const Footer = () => {
               <Mail size={20} className="me-2" style={{ color: '#6c757d' }} />
               <span className="text-secondary">support@compraprice.com</span>
             </div>
-            <div className="d-flex align-items-center mb-3 fs-5">
+            {/* <div className="d-flex align-items-center mb-3 fs-5">
               <Phone size={20} className="me-2" style={{ color: '#6c757d' }} />
-              <span className="text-secondary">+1 (555) 123-4567</span>
-            </div>
+              <span className="text-secondary"> (123) 123-456</span>
+            </div> */}
             <div className="d-flex align-items-start fs-5">
               <MapPin size={20} className="me-2 mt-1" style={{ color: '#6c757d' }} />
               <span className="text-secondary">
-                123 Business Street, Suite 100<br />New York, NY 10001
+                Bengaluru,India
               </span>
             </div>
           </div>

@@ -17,7 +17,7 @@
 } */
 
 
-.card a {
+/* .card a {
   color: black;
   text-decoration: none;
 }
@@ -30,4 +30,15 @@
   width: 100%;
   object-fit: contain;
   max-height: 200px;
+} */
+
+.card-title {
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* ✅ limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 1rem;
+  line-height: 1.4rem;
+  min-height: calc(1.4rem * 4); /* optional: maintains height */
 }
