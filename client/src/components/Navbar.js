@@ -26,10 +26,10 @@ export default function Navbar() {
           {/* Desktop Navigation */}
           <div className="d-none d-md-flex align-items-center gap-4 ms-auto">
             <a href="/" className="nav-link-custom">Home</a>
-            <a href="/categories" className="nav-link-custom">Categories</a>
-            <a href="/deals" className="nav-link-custom">Deals</a>
+            {/* <a href="/categories" className="nav-link-custom">Categories</a> */}
+            {/* <a href="/deals" className="nav-link-custom">Deals</a> */}
             <a href="/about" className="nav-link-custom">About</a>
-            <a href="/login" className="nav-link-custom">Log in</a>
+            {/* <a href="/login" className="nav-link-custom">Log in</a> */}
             {/* <a href="/" className="nav-link-custom">Help</a> */}
           </div>
 

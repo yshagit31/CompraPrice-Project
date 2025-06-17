@@ -29,7 +29,7 @@ const Footer = () => {
             <p className="text-secondary fs-5">
               Your ultimate destination for comparing prices and finding the best deals across multiple platforms.
             </p>
-            <div className="d-flex gap-3 mt-3">
+            {/* <div className="d-flex gap-3 mt-3">
               {[Facebook, Twitter, Instagram, Linkedin].map((Icon, i) => (
                 <a
                   key={i}
@@ -42,7 +42,7 @@ const Footer = () => {
                   <Icon className="text-white" size={20} />
                 </a>
               ))}
-            </div>
+            </div> */}
           </div>
 
           {/* Quick Links */}
