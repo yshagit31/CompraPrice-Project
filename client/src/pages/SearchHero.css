@@ -98,8 +98,8 @@
 }
 
 .custom-popular-btn:hover {
-  color: #2563eb; /* blue-600 */
-  border-color: #93c5fd; /* blue-300 */
+  color: #2563eb; 
+  border-color: #93c5fd; 
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
@@ -163,24 +163,6 @@
   color: #6c757d;
 }
 
-/* .search-button {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 1.25rem;
-  padding: 0.8rem 2.5rem;
-  color: white;
-  font-weight: 600;
-  font-size: 1rem;
-  line-height: normal;
-  border: none;
-  outline: none;
-  border-radius: 0.6rem;
-  background: linear-gradient(to right, #2563eb, #7c3aed);
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-} */
-
 .search-button {
   position: absolute;
   right: 0;
@@ -202,7 +184,7 @@
 
 .search-button.disabled,
 .search-button:disabled {
-  background: #9ca3af; /* grayish tone */
+  background: #9ca3af; 
   cursor: not-allowed;
   opacity: 0.7;
   pointer-events: none;
@@ -304,4 +286,71 @@
   line-height: 1.5;
   max-width: 220px;
   margin: 0 auto;
+}
+
+/* Responsive adjustments for smaller devices */
+@media (max-width: 768px) {
+  .search-container {
+    padding-inline: 0.75rem;
+    padding-top: 0.4rem;
+    padding-bottom: 0.4rem;
+    width: 95%;
+  }
+
+  .search-hero {
+    padding-left: 2.5rem;
+    padding-right: 6rem;
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .search-hero::placeholder {
+    font-size: 1rem;
+  }
+
+  .search-icon {
+    left: 12px;
+    width: 20px;
+    height: 20px;
+  }
+
+  .search-button {
+    margin-right: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .search-container {
+    padding-inline: 0.5rem;
+    padding-top: 0.3rem;
+    padding-bottom: 0.3rem;
+    width: 100%;
+  }
+
+  .search-hero {
+    padding-left: 2rem;
+    padding-right: 5rem;
+    padding-top: 0.6rem;
+    padding-bottom: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .search-hero::placeholder {
+    font-size: 0.9rem;
+  }
+
+  .search-icon {
+    left: 10px;
+    width: 18px;
+    height: 18px;
+  }
+
+  .search-button {
+    margin-right: 0.3rem;
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
 }
