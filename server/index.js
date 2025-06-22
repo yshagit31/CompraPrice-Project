@@ -37,7 +37,7 @@ const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
 const USD_TO_INR = 82;
 
 // Fetch data from Flipkart API
-console.log("API key:",  process.env.RAPIDAPI_KEY_FLIPKART);
+console.log("API key:",  process.env.RAPIDAPI_KEY_AMAZON);
 const fetchFlipkartData = async (query) => {
 // console.log("Host:", process.env.REACT_APP_RAPIDAPI_HOST);
 
@@ -135,6 +135,12 @@ app.get('/api/search', async (req, res) => {
         res.status(500).json({ error: 'Internal server error' });
     }
 });
+
+app.get('/api/search', async (req, res) => {
+  console.log('🔥 API HIT on Vercel');
+  console.log('🔑 API Key:', process.env.RAPIDAPI_KEY_AMAZON);
+});
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
