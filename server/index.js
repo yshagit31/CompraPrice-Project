@@ -136,6 +136,12 @@ app.get('/api/search', async (req, res) => {
     }
 });
 
+app.get('/api/search', async (req, res) => {
+  console.log('🔥 API HIT on Vercel');
+  console.log('🔑 API Key:', process.env.RAPIDAPI_KEY_AMAZON);
+});
+
+
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
