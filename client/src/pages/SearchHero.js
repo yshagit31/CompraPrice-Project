@@ -45,7 +45,7 @@ export default function SearchHero({ onSearch }) {
 
 
   const popularSearches = [
-    'Phone',
+    'iPhone',
     'Watch',
     'Laptop',
     'Headphones',
