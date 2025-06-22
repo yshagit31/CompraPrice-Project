@@ -37,7 +37,7 @@ const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
 const USD_TO_INR = 82;
 
 // Fetch data from Flipkart API
-console.log("API key:",  process.env.RAPIDAPI_KEY_FLIPKART);
+console.log("API key:",  process.env.RAPIDAPI_KEY_AMAZON);
 const fetchFlipkartData = async (query) => {
 // console.log("Host:", process.env.REACT_APP_RAPIDAPI_HOST);
 
