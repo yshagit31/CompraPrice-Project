@@ -37,7 +37,10 @@ const fetchWithRetry = async (url, options, retries = 3, backoff = 3000) => {
 const USD_TO_INR = 82;
 
 // Fetch data from Flipkart API
+console.log("API key:",  process.env.RAPIDAPI_KEY_FLIPKART);
 const fetchFlipkartData = async (query) => {
+// console.log("Host:", process.env.REACT_APP_RAPIDAPI_HOST);
+
     const options = {
         method: 'GET',
         url: 'https://real-time-flipkart-api.p.rapidapi.com/product-search',
@@ -54,6 +57,7 @@ const fetchFlipkartData = async (query) => {
 
     try {
         const response = await axios.request(options);
+        console.log("flaipkart response",response);
         return response.data.products || [];
     } catch (error) {
         console.error('Error fetching from Flipkart API:', error.message);

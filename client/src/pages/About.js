@@ -45,13 +45,15 @@ const About = () => {
               borderRadius: '1rem',
               boxShadow: '0 10px 20px rgba(0, 0, 0, 0.15)',
               padding: '32px',
-              height: '100%'
+              height: '100%',
+             textAlign: 'justify'
             }}>
               <h2 style={{
                 fontSize: '1.75rem',
                 fontWeight: 'bold',
                 color: '#2563eb',
-                marginBottom: '16px'
+                marginBottom: '16px',
+                textAlign:'center'
               }}>
                 Our Story
               </h2>

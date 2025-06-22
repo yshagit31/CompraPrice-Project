@@ -25,9 +25,9 @@ export default function SearchHero({ onSearch }) {
   if (!searchTerm.trim()) return;
       setIsLoading(true);
         try {
-           console.log("api",process.env.REACT_APP_API_URL);
-    
-            const response = await axios.get(`${process.env.REACT_APP_API_URL}/search?q=${searchTerm}`);
+          //  console.log("api",process.env.REACT_APP_API_URL);
+            const response = await axios.get(`${process.env.REACT_APP_LOCAL_API_URL}/search?q=${searchTerm}`);
+            // const response = await axios.get(`${process.env.REACT_APP_API_URL}/search?q=${searchTerm}`);
             const data = response.data;
             console.log("data",data.products);
             // Set products directly from the server response
@@ -150,7 +150,7 @@ export default function SearchHero({ onSearch }) {
         variants={popIn}
       >
         <div className="search-container">
-                 <Search className="search-icon" />
+         <Search className="search-icon" />
           <motion.input
             type="text"
             value={query}
@@ -337,3 +337,4 @@ export default function SearchHero({ onSearch }) {
     </div>
   );
 }
+
