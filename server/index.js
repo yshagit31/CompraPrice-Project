@@ -136,7 +136,7 @@ app.get('/api/search', async (req, res) => {
     }
 });
 
-app.get('/api/search', async (req, res) => {
+app.get('/test', async (req, res) => {
   console.log('🔥 API HIT on Vercel');
   console.log('🔑 API Key:', process.env.RAPIDAPI_KEY_AMAZON);
 });
