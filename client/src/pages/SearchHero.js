@@ -26,8 +26,8 @@ export default function SearchHero({ onSearch }) {
       setIsLoading(true);
         try {
           //  console.log("api",process.env.REACT_APP_API_URL);
-            const response = await axios.get(`${process.env.REACT_APP_LOCAL_API_URL}/search?q=${searchTerm}`);
-            // const response = await axios.get(`${process.env.REACT_APP_API_URL}/search?q=${searchTerm}`);
+            // const response = await axios.get(`${process.env.REACT_APP_LOCAL_API_URL}/search?q=${searchTerm}`);
+            const response = await axios.get(`${process.env.REACT_APP_API_URL}/search?q=${searchTerm}`);
             const data = response.data;
             console.log("data",data.products);
             // Set products directly from the server response
