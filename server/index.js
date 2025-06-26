@@ -147,7 +147,11 @@ app.get('/api/search', async (req, res) => {
 
        console.log("combined product",combinedProducts);
 
-        const sortedProducts = combinedProducts.sort((a, b) => a.price - b.price);
+       const filteredProducts = combinedProducts.filter(p =>
+         typeof p.price === 'number' && !isNaN(p.price) && p.price > 0
+        );
+
+        const sortedProducts = filteredProducts.sort((a, b) => a.price - b.price);
          console.log("sorted product",sortedProducts);
 
         res.json({ products: sortedProducts });
