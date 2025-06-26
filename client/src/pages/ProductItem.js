@@ -129,7 +129,7 @@ function ProductItem({ product }) {
   const formatPrice = (price) =>
     new Intl.NumberFormat('en-IN', {
       style: 'currency',
-      currency: 'INR',
+      currency: '$',
       minimumFractionDigits: 0,
     }).format(price);
 

@@ -100,14 +100,30 @@ const normalizeFlipkartProduct = (product) => ({
     image: product.images[0] // Use the first image
 });
 
-// Normalize Amazon product data
-const normalizeAmazonProduct = (product) => ({
-    id: product.asin,
-    title: product.product_title,
-    price: (parseFloat(product.product_price.replace('$', '').replace(',', '')) * USD_TO_INR).toFixed(2), // Convert price to INR
-    url: product.product_url,
-    image: product.product_photo
-});
+const normalizeAmazonProduct = (product) => {
+    let price = 0;
+    const rawPrice = product.product_price;
+        console.log("raw rpice",rawPrice);
+    if (rawPrice !== null && rawPrice !== undefined && typeof rawPrice === 'string' && typeof rawPrice === 'string' && rawPrice.includes('$')) {
+        try {
+            // price = parseFloat(rawPrice.replace('$', '').replace(',', '')) * USD_TO_INR;
+            price = parseFloat(rawPrice.replace('$', '').replace(',', '')); 
+        } catch (e) {
+            console.warn('⚠️ Error parsing price:', rawPrice, e.message);
+        }
+    } else {
+        console.warn('⚠️ Skipping product with invalid price:', product.product_title);
+    }
+
+    console.log("going for return");
+    return {
+        id: product.asin,
+        title: product.product_title,
+        price: Number(price.toFixed(2)),
+        url: product.product_url,
+        image: product.product_photo
+    };
+};
 
 // API endpoint to search and sort products
 app.get('/api/search', async (req, res) => {
@@ -121,13 +137,18 @@ app.get('/api/search', async (req, res) => {
             fetchFlipkartData(query),
             fetchAmazonData(query)
         ]);
+        console.log("amazondata",amazonData);
+        console.log("flipkartdata",flipkartData);
 
         const combinedProducts = [
             ...flipkartData.map(normalizeFlipkartProduct),
             ...amazonData.map(normalizeAmazonProduct)
         ];
 
+       console.log("combined product",combinedProducts);
+
         const sortedProducts = combinedProducts.sort((a, b) => a.price - b.price);
+         console.log("sorted product",sortedProducts);
 
         res.json({ products: sortedProducts });
     } catch (error) {
